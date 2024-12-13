@@ -94,4 +94,6 @@ return require('packer').startup(function(use)
         end,
     })
 
+    -- HTML
+    use("windwp/nvim-ts-autotag")
 end)
