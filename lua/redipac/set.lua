@@ -41,4 +41,4 @@ vim.opt.listchars = {
   trail = '·'
 }
 
-vim.g.fugitive_git_executable = "/mnt/c/Program\\ Files/Git/cmd/git.exe"
+-- vim.g.fugitive_git_executable = "/mnt/c/Program\\ Files/Git/cmd/git.exe"
