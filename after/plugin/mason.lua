@@ -31,6 +31,8 @@ lspconfig.pyright.setup {
 
 lspconfig.ts_ls.setup {}
 
+lspconfig.cmake.setup({})
+
 null_ls.setup({
   sources = {
     null_ls.builtins.formatting.autopep8,
