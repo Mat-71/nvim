@@ -21,7 +21,7 @@ vim.opt.smartcase = true
 vim.opt.wrap = false
 vim.opt.scrolloff = 4
 vim.opt.sidescrolloff = 4
-vim.opt.colorcolumn = "120"
+vim.opt.colorcolumn = "80"
 
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")

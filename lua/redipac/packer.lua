@@ -45,7 +45,8 @@ return require('packer').startup(function(use)
             {'saadparwaiz1/cmp_luasnip'},
             {'hrsh7th/cmp-nvim-lsp'},
             {'hrsh7th/cmp-nvim-lua'},
-            {'jose-elias-alvarez/null-ls.nvim'},
+            {"nvimtools/none-ls.nvim"},
+            {"nvimtools/none-ls-extras.nvim"},
 
             -- Snippets
             {'L3MON4D3/LuaSnip'},
@@ -64,7 +65,10 @@ return require('packer').startup(function(use)
     "windwp/nvim-autopairs",
     event = "InsertEnter",
     config = function()
-        require("nvim-autopairs").setup {}
+        require("nvim-autopairs").setup({})
+        local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+        local cmp = require("cmp")
+        cmp.event:on("confirm_done", require("nvim-autopairs.completion.cmp").on_confirm_done())
     end
     }
 
@@ -96,4 +100,14 @@ return require('packer').startup(function(use)
 
     -- HTML
     use("windwp/nvim-ts-autotag")
+
+    -- JS/TS
+    use({
+        "jose-elias-alvarez/nvim-lsp-ts-utils",
+        requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    })
+
+    -- .NET
+    use("Hoffs/omnisharp-extended-lsp.nvim")
+    use("OmniSharp/omnisharp-vim")
 end)
